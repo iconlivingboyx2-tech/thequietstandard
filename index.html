@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Quiet Standard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --void: #000000;
+            --bone: #f5f5f0;
+            --ash: #888888;
+            --serif: 'Cormorant Garamond', serif;
+            --sans: 'Inter', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--void);
+            color: var(--bone);
+            font-family: var(--sans);
+            overflow-x: hidden;
+            cursor: default;
+        }
+
+        /* Custom Scrollbar - Minimal */
+        ::-webkit-scrollbar {
+            width: 2px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--void);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--ash);
+        }
+
+        /* The Void - Landing */
+        .void {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            background: var(--void);
+        }
+
+        .void-text {
+            font-family: var(--serif);
+            font-size: clamp(1.5rem, 4vw, 3rem);
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            text-align: center;
+            opacity: 0;
+            animation: emerge 3s ease-out forwards;
+            animation-delay: 0.5s;
+        }
+
+        .void-sub {
+            font-family: var(--sans);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            color: var(--ash);
+            margin-top: 2rem;
+            opacity: 0;
+            animation: emerge 3s ease-out forwards;
+            animation-delay: 2s;
+        }
+
+        /* Navigation - Hidden by default */
+        .nav-trigger {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            width: 40px;
+            height: 40px;
+            z-index: 1000;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 6px;
+            opacity: 0;
+            animation: emerge 2s ease-out forwards;
+            animation-delay: 3s;
+        }
+
+        .nav-trigger span {
+            display: block;
+            width: 100%;
+            height: 1px;
+            background: var(--bone);
+            transition: all 0.4s ease;
+        }
+
+        .nav-trigger:hover span:first-child {
+            transform: translateY(-2px);
+        }
+        .nav-trigger:hover span:last-child {
+            transform: translateY(2px);
+        }
+
+        .nav-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: var(--void);
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.6s ease;
+        }
+
+        .nav-menu.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .nav-menu a {
+            font-family: var(--serif);
+            font-size: 2rem;
+            color: var(--bone);
+            text-decoration: none;
+            letter-spacing: 0.1em;
+            opacity: 0.6;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            opacity: 1;
+            letter-spacing: 0.2em;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            width: 0;
+            height: 1px;
+            background: var(--bone);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        /* Sections */
+        section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 4rem 2rem;
+            position: relative;
+        }
+
+        .section-title {
+            font-family: var(--serif);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.4em;
+            color: var(--ash);
+            margin-bottom: 4rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 1s ease;
+        }
+
+        .section-title.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Philosophy Section */
+        .pillars {
+            display: flex;
+            flex-direction: column;
+            gap: 6rem;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .pillar {
+            text-align: center;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1.2s ease;
+        }
+
+        .pillar.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .pillar-word {
+            font-family: var(--serif);
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .pillar-desc {
+            font-family: var(--sans);
+            font-size: 0.9rem;
+            color: var(--ash);
+            letter-spacing: 0.05em;
+            line-height: 1.8;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        /* Archive Section - The Grid */
+        .archive-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2px;
+            width: 100%;
+            max-width: 1200px;
+            background: var(--void);
+        }
+
+        .archive-item {
+            aspect-ratio: 1;
+            background: var(--void);
+            border: 1px solid #111;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .archive-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(255,255,255,0.03) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .archive-item:hover::before {
+            opacity: 1;
+        }
+
+        .archive-item:hover {
+            border-color: var(--ash);
+            transform: scale(1.02);
+            z-index: 10;
+        }
+
+        .archive-text {
+            font-family: var(--serif);
+            font-size: 1.5rem;
+            text-align: center;
+            line-height: 1.4;
+            letter-spacing: 0.02em;
+            z-index: 2;
+        }
+
+        .archive-views {
+            position: absolute;
+            bottom: 1rem;
+            left: 1rem;
+            font-family: var(--sans);
+            font-size: 0.7rem;
+            color: var(--ash);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .archive-item:hover .archive-views {
+            opacity: 1;
+        }
+
+        /* Practice Section */
+        .practice-content {
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .practice-intro {
+            font-family: var(--serif);
+            font-size: 1.5rem;
+            line-height: 1.6;
+            margin-bottom: 4rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 1s ease;
+        }
+
+        .practice-intro.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .protocols {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .protocol {
+            border: 1px solid #222;
+            padding: 2rem;
+            text-align: left;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+
+        .protocol.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .protocol:hover {
+            border-color: var(--ash);
+            background: rgba(255,255,255,0.02);
+        }
+
+        .protocol-name {
+            font-family: var(--serif);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        .protocol-desc {
+            font-family: var(--sans);
+            font-size: 0.85rem;
+            color: var(--ash);
+            line-height: 1.6;
+        }
+
+        /* Contact - The Gate */
+        .gate {
+            max-width: 500px;
+            text-align: center;
+        }
+
+        .gate-text {
+            font-family: var(--serif);
+            font-size: 1.3rem;
+            line-height: 1.6;
+            margin-bottom: 3rem;
+            color: var(--ash);
+        }
+
+        .gate-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .gate-form input,
+        .gate-form textarea {
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #333;
+            padding: 1rem 0;
+            color: var(--bone);
+            font-family: var(--sans);
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .gate-form input:focus,
+        .gate-form textarea:focus {
+            border-color: var(--bone);
+        }
+
+        .gate-form input::placeholder,
+        .gate-form textarea::placeholder {
+            color: #444;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+        }
+
+        .gate-form button {
+            background: transparent;
+            border: 1px solid var(--bone);
+            color: var(--bone);
+            padding: 1.2rem 3rem;
+            font-family: var(--sans);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            cursor: pointer;
+            margin-top: 2rem;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gate-form button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--bone);
+            transition: left 0.4s ease;
+            z-index: -1;
+        }
+
+        .gate-form button:hover::before {
+            left: 0;
+        }
+
+        .gate-form button:hover {
+            color: var(--void);
+        }
+
+        /* Footer */
+        footer {
+            padding: 4rem 2rem;
+            text-align: center;
+            border-top: 1px solid #111;
+        }
+
+        .footer-text {
+            font-family: var(--sans);
+            font-size: 0.7rem;
+            color: var(--ash);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+
+        /* Animations */
+        @keyframes emerge {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .archive-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-trigger {
+                top: 1.5rem;
+                right: 1.5rem;
+            }
+        }
+
+        /* Selection Color */
+        ::selection {
+            background: rgba(255,255,255,0.1);
+            color: var(--bone);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Trigger -->
+    <div class="nav-trigger" onclick="toggleNav()">
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- Navigation Menu -->
+    <nav class="nav-menu" id="navMenu">
+        <a href="#philosophy" onclick="toggleNav()">Philosophy</a>
+        <a href="#archive" onclick="toggleNav()">Archive</a>
+        <a href="#practice" onclick="toggleNav()">Practice</a>
+        <a href="#gate" onclick="toggleNav()">The Gate</a>
+    </nav>
+
+    <!-- The Void -->
+    <section class="void">
+        <h1 class="void-text">Control the mind.<br>Raise the standard.</h1>
+        <p class="void-sub">Silence • Structure • Discipline</p>
+    </section>
+
+    <!-- Philosophy -->
+    <section id="philosophy">
+        <p class="section-title">The Foundation</p>
+        <div class="pillars">
+            <div class="pillar">
+                <span class="pillar-word">Silence</span>
+                <p class="pillar-desc">Noise is the enemy of clarity. In silence, the mind finds its true frequency. Speak only when it compounds power.</p>
+            </div>
+            <div class="pillar">
+                <span class="pillar-word">Structure</span>
+                <p class="pillar-desc">Empires require architecture. Without systems, willpower is a finite resource that depletes. Build the machine.</p>
+            </div>
+            <div class="pillar">
+                <span class="pillar-word">Discipline</span>
+                <p class="pillar-desc">Not motivation. Not inspiration. The daily practice of doing what is required, regardless of circumstance.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Archive -->
+    <section id="archive">
+        <p class="section-title">The Empire</p>
+        <div class="archive-grid">
+            <div class="archive-item">
+                <p class="archive-text">Empires require<br>structure</p>
+                <span class="archive-views">◉ 137</span>
+            </div>
+            <div class="archive-item">
+                <p class="archive-text">Empires<br>start in the mind</p>
+                <span class="archive-views">◉ 123</span>
+            </div>
+            <div class="archive-item">
+                <p class="archive-text">Delusional belief<br>builds empires</p>
+                <span class="archive-views">◉ 153</span>
+            </div>
+            <div class="archive-item">
+                <p class="archive-text">Weak standards<br>create weak lives</p>
+                <span class="archive-views">◉ 204</span>
+            </div>
+            <div class="archive-item">
+                <p class="archive-text">The void is not<br>empty</p>
+                <span class="archive-views">◉ 89</span>
+            </div>
+            <div class="archive-item">
+                <p class="archive-text">Stillness is<br>velocity</p>
+                <span class="archive-views">◉ 112</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practice -->
+    <section id="practice">
+        <p class="section-title">The Work</p>
+        <div class="practice-content">
+            <p class="practice-intro">Philosophy without practice is noise. These are the systems. The architecture of a life built, not wished for.</p>
+            <div class="protocols">
+                <div class="protocol">
+                    <h3 class="protocol-name">The Morning Protocol</h3>
+                    <p class="protocol-desc">Silence before input. No phone. No news. Only the mind and the work that matters. 90 minutes of deep creation.</p>
+                </div>
+                <div class="protocol">
+                    <h3 class="protocol-name">The Standard Journal</h3>
+                    <p class="protocol-desc">Daily audit. Three standards maintained. Three standards compromised. No excuses, only adjustment.</p>
+                </div>
+                <div class="protocol">
+                    <h3 class="protocol-name">The Empire Map</h3>
+                    <p class="protocol-desc">Weekly architecture review. Systems checked. Structures reinforced. Weakness identified and eliminated.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Gate -->
+    <section id="gate">
+        <p class="section-title">Entry</p>
+        <div class="gate">
+            <p class="gate-text">This is not for everyone. The Quiet Standard is for those building something that outlives them. If that is you, proceed.</p>
+            <form class="gate-form" onsubmit="event.preventDefault(); alert('The gate is watched. We will find you if you are ready.');">
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Contact" required>
+                <textarea placeholder="What are you building?" rows="3" required></textarea>
+                <button type="submit">Request Entry</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p class="footer-text">© The Quiet Standard</p>
+    </footer>
+
+    <script>
+        // Navigation Toggle
+        function toggleNav() {
+            const nav = document.getElementById('navMenu');
+            nav.classList.toggle('active');
+        }
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.querySelectorAll('.section-title, .pillar, .practice-intro, .protocol').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Stagger pillar animations
+        const pillars = document.querySelectorAll('.pillar');
+        pillars.forEach((pillar, index) => {
+            pillar.style.transitionDelay = `${index * 0.2}s`;
+        });
+
+        // Stagger protocol animations
+        const protocols = document.querySelectorAll('.protocol');
+        protocols.forEach((protocol, index) => {
+            protocol.style.transitionDelay = `${index * 0.15}s`;
+        });
+
+        // Parallax effect on void text
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const voidText = document.querySelector('.void-text');
+            if (voidText && scrolled < window.innerHeight) {
+                voidText.style.transform = `translateY(${scrolled * 0.3}px)`;
+                voidText.style.opacity = 1 - (scrolled / window.innerHeight);
+            }
+        });
+    </script>
+</body>
+</html>
