@@ -287,6 +287,16 @@ visibility:hidden;
             opacity: 1;
             transform: translateY(0);
         }
+.fade-in{
+opacity:0;
+transform:translateY(40px);
+transition:all 1.2s ease;
+}
+
+.fade-in.visible{
+opacity:1;
+transform:translateY(0);
+}
 
         /* Philosophy Section */
         .pillars {
@@ -617,7 +627,7 @@ visibility:hidden;
     </section>
 
     <!-- Philosophy -->
-    <section id="philosophy">
+    <section id="philosophy" class="fade-in">
         <p class="section-title">The Foundation</p>
         <div class="pillars">
             <div class="pillar">
@@ -634,9 +644,22 @@ visibility:hidden;
             </div>
         </div>
     </section>
+<section class="manifesto fade-in">
+<p class="manifesto-text">
+Not everything needs to be loud.<br><br>
 
+The quiet standard is not popularity.<br>
+It is discipline.<br>
+It is structure.<br>
+It is long-term thinking.<br><br>
+
+We build systems.<br>
+We build work that compounds.<br>
+We build things that outlive us.
+</p>
+</section>
     <!-- Archive -->
-    <section id="archive">
+    <section id="archive" class="fade-in">
         <p class="section-title">The Empire</p>
         <div class="archive-grid">
             <div class="archive-item">
@@ -667,7 +690,7 @@ visibility:hidden;
     </section>
 
     <!-- Practice -->
-    <section id="practice">
+    <section id="practice" class="fade-in">
         <p class="section-title">The Work</p>
         <div class="practice-content">
             <p class="practice-intro">Philosophy without practice is noise. These are the systems. The architecture of a life built, not wished for.</p>
