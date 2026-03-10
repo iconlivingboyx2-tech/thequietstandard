@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,7 +13,7 @@
   margin-top:60px;
   color:#aaa;
   letter-spacing:2px;
-  font-size:14px; 
+  font-size:14px;
 }
 
 .qs-logo{
@@ -25,81 +26,9 @@
   margin-right:8px;
   opacity:0.8;
 }
+
 .ig-handle{
-    opacity:0.7;
-}
-
-.manifesto{
-    text-align:center;
-    margin-top:20px;
-    font-size:14px;
-    letter-spacing:2px;
-    opacity:0.7;
-}
-#intro{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100vh;
-background:#000;
-display:flex;
-align-items:center;
-justify-content:center;
-z-index:9999;
-animation:introFade 3.6s ease forwards;
-}
-
-.intro-text{
-font-family:'Cormorant Garamond', serif;
-font-size:32px;
-letter-spacing:6px;
-color:#fff;
-opacity:0;
-animation:introText 1.8s ease forwards;
-animation-delay:0.6s;
-
-text-align:center;
-padding-left:20px;
-padding-right:20px;
-}
-@media (max-width:768px){
-.intro-text{
-font-size:26px;
-letter-spacing:4px;
-}
-}
-.qs-monogram{
-text-align:center;
-font-family:'Cormorant Garamond', serif;
-font-size:42px;
-letter-spacing:8px;
-margin-bottom:20px;
-opacity:0.9;
-}
-@keyframes introFade{
-0%{
-opacity:0;
-}
-
-20%{
-opacity:1;
-}
-
-80%{
-opacity:1;
-}
-
-100%{
-opacity:0;
-visibility:hidden;
-}
-}
-
-@keyframes introText{
-0%{opacity:0;transform:translateY(20px);}
-100%{opacity:1;transform:translateY(0);}
-}
+  opacity:0.7;
 }
         * {
             margin: 0;
@@ -287,15 +216,6 @@ visibility:hidden;
             opacity: 1;
             transform: translateY(0);
         }
-.fade-in{
-opacity:1;
-transform:translateY(0);
-transition:all 1.2s ease;
-}
-.fade-in.visible{
-opacity:1;
-transform:translateY(0);
-}
 
         /* Philosophy Section */
         .pillars {
@@ -601,9 +521,6 @@ transform:translateY(0);
     </style>
 </head>
 <body>
-    <div id="intro">
-  <div class="intro-text">THE QUIET STANDARD</div>
-</div>
 
     <!-- Navigation Trigger -->
     <div class="nav-trigger" onclick="toggleNav()">
@@ -626,7 +543,7 @@ transform:translateY(0);
     </section>
 
     <!-- Philosophy -->
-   <section id="philosophy">
+    <section id="philosophy">
         <p class="section-title">The Foundation</p>
         <div class="pillars">
             <div class="pillar">
@@ -643,16 +560,7 @@ transform:translateY(0);
             </div>
         </div>
     </section>
-<section class="manifesto">
-<p class="manifesto-text">
-Not everything needs to be loud.<br><br>
 
-The quiet standard is not popularity.<br>
-It is discipline.<br>
-It is structure.<br>
-It is long-term thinking.<br><br>
-</p>
-</section>
     <!-- Archive -->
     <section id="archive">
         <p class="section-title">The Empire</p>
@@ -708,14 +616,9 @@ It is long-term thinking.<br><br>
 
     <!-- The Gate -->
     <section id="gate">
-        <div class="qs-monogram">QS</div>
         <p class="section-title">Entry</p>
         <div class="gate">
-            <p class="gate-text">
-This is not for everyone. The Quiet Standard is for those building something that outlives them.
-</p>
-
-<p class="manifesto">Quiet work. Long horizons.</p>
+            <p class="gate-text">This is not for everyone. The Quiet Standard is for those building something that outlives them. If that is you, proceed.</p>
             <form class="gate-form" action="https://formspree.io/f/mjgagnzl" method="POST">
                 <input type="text" name="name" placeholder="Name" required>
 
@@ -735,17 +638,53 @@ This is not for everyone. The Quiet Standard is for those building something tha
         <footer>
 <p class="footer-text">© The Quiet Standard</p
 </footer>
- <script>
-function toggleNav() {
-  const nav = document.getElementById("navMenu");
-  nav.classList.toggle("active");
-}
+    <script>
+        // Navigation Toggle
+        function toggleNav() {
+            const nav = document.getElementById('navMenu');
+            nav.classList.toggle('active');
+        }
 
-document.querySelectorAll('#navMenu a').forEach(link => {
-  link.addEventListener('click', () => {
-    document.getElementById("navMenu").classList.remove("active");
-  });
-});
-</script>       
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.querySelectorAll('.section-title, .pillar, .practice-intro, .protocol').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Stagger pillar animations
+        const pillars = document.querySelectorAll('.pillar');
+        pillars.forEach((pillar, index) => {
+            pillar.style.transitionDelay = `${index * 0.2}s`;
+        });
+
+        // Stagger protocol animations
+        const protocols = document.querySelectorAll('.protocol');
+        protocols.forEach((protocol, index) => {
+            protocol.style.transitionDelay = `${index * 0.15}s`;
+        });
+
+        // Parallax effect on void text
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const voidText = document.querySelector('.void-text');
+            if (voidText && scrolled < window.innerHeight) {
+                voidText.style.transform = `translateY(${scrolled * 0.3}px)`;
+                voidText.style.opacity = 1 - (scrolled / window.innerHeight);
+            }
+        });
+    </script>
 </body>
 </html>
