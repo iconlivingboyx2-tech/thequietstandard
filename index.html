@@ -80,7 +80,7 @@
 
         .void-text {
             font-family: var(--serif);
-            font-size: clamp(1.5rem, 4vw, 3rem);
+            font-size: clamp(2.2rem, 6vw, 4.5rem);
             font-weight: 400;
             letter-spacing: 0.05em;
             text-align: center;
@@ -100,7 +100,17 @@
             animation: emerge 3s ease-out forwards;
             animation-delay: 2s;
         }
-
+.brand-title{
+font-family:'Cormorant Garamond', serif;
+font-size:14px;
+letter-spacing:6px;
+color:#aaa;
+margin-bottom:30px;
+text-align:center;
+opacity:0;
+animation:emerge 3.5s ease forwards;
+animation-delay:0.2s;
+}
         /* Navigation - Hidden by default */
         .nav-trigger {
             position: fixed;
@@ -541,6 +551,15 @@
   border:1px solid white;
   padding:12px 30px;
 }
+        .qs-entry-logo{
+font-family:'Cormorant Garamond', serif;
+font-size:22px;
+letter-spacing:4px;
+color:#aaa;
+text-align:center;
+margin-bottom:30px;
+opacity:0.7;
+}
 
     </style>
 </head>
@@ -566,6 +585,7 @@
 
     <!-- The Void -->
     <section class="void">
+        <h2 class="brand-title">THE QUIET STANDARD</h2>
         <h1 class="void-text">Control the mind.<br>Raise the standard.</h1>
         <p class="void-sub">Silence • Structure • Discipline</p>
     </section>
@@ -644,6 +664,7 @@
 
     <!-- The Gate -->
     <section id="gate">
+        <div class="qs-entry-logo">QS</div>
         <p class="section-title">Entry</p>
         <div class="gate">
             <p class="gate-text">This is not for everyone. The Quiet Standard is for those building something that outlives them. If that is you, proceed.</p>
