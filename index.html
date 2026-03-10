@@ -762,9 +762,7 @@ This is not for everyone. The Quiet Standard is for those building something tha
         }, observerOptions);
 
         // Observe all animated elements
-        document.querySelectorAll('.section-title, .pillar, .practice-intro, .protocol').forEach(el => {
-            observer.observe(el);
-        });
+        document.querySelectorAll('.fade-in, .section-title, .pillar, .practice-intro, .protocol')
 
         // Stagger pillar animations
         const pillars = document.querySelectorAll('.pillar');
