@@ -651,10 +651,6 @@ The quiet standard is not popularity.<br>
 It is discipline.<br>
 It is structure.<br>
 It is long-term thinking.<br><br>
-
-We build systems.<br>
-We build work that compounds.<br>
-We build things that outlive us.
 </p>
 </section>
     <!-- Archive -->
@@ -739,6 +735,17 @@ This is not for everyone. The Quiet Standard is for those building something tha
         <footer>
 <p class="footer-text">© The Quiet Standard</p
 </footer>
-        
+ <script>
+function toggleNav() {
+  const nav = document.getElementById("navMenu");
+  nav.classList.toggle("active");
+}
+
+document.querySelectorAll('#navMenu a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById("navMenu").classList.remove("active");
+  });
+});
+</script>       
 </body>
 </html>
