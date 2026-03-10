@@ -739,51 +739,6 @@ This is not for everyone. The Quiet Standard is for those building something tha
         <footer>
 <p class="footer-text">© The Quiet Standard</p
 </footer>
-    <script>
-        // Navigation Toggle
-        function toggleNav() {
-            const nav = document.getElementById('navMenu');
-            nav.classList.toggle('active');
-        }
-
-        // Intersection Observer for scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all animated elements
-        document.querySelectorAll('.fade-in, .section-title, .pillar, .practice-intro, .protocol')
-
-        // Stagger pillar animations
-        const pillars = document.querySelectorAll('.pillar');
-        pillars.forEach((pillar, index) => {
-            pillar.style.transitionDelay = `${index * 0.2}s`;
-        });
-
-        // Stagger protocol animations
-        const protocols = document.querySelectorAll('.protocol');
-        protocols.forEach((protocol, index) => {
-            protocol.style.transitionDelay = `${index * 0.15}s`;
-        });
-
-        // Parallax effect on void text
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const voidText = document.querySelector('.void-text');
-            if (voidText && scrolled < window.innerHeight) {
-                voidText.style.transform = `translateY(${scrolled * 0.3}px)`;
-                voidText.style.opacity = 1 - (scrolled / window.innerHeight);
-            }
-        });
-    </script>
+        
 </body>
 </html>
