@@ -549,20 +549,49 @@ opacity:1;
   border:1px solid white;
   padding:12px 30px;
 }
-        .qs-entry-logo{
-font-family:'Cormorant Garamond', serif;
-font-size:22px;
-letter-spacing:4px;
-color:#aaa;
-text-align:center;
-margin-bottom:30px;
-opacity:0.7;
+        .qs-logo{
+  font-family:'Cormorant Garamond', serif;
+  font-size:160px;
+  letter-spacing:32px;
+color:#f2f2f2;
+  text-align:center;
+  margin-bottom:10px;
+}
+  .fade {
+  opacity: 0;
+  animation: fadeIn 3s ease forwards;
 }
 
+.delay1 { animation-delay: 1s; }
+.delay2 { animation-delay: 2s; }
+.delay3 { animation-delay: 3s; }
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
     </style>
 </head>
 <body>  
-  
+ <div class="container">
+
+  <div class="qs-logo fade">QS</div>
+
+  <div class="brand-title fade delay1">
+    THE QUIET STANDARD
+  </div>
+
+  <div class="philosophy fade delay2">
+    Control the mind.<br>
+    Raise the standard.
+  </div>
+
+  <div class="pillars fade delay3">
+    Silence • Structure • Discipline
+  </div>
+
+</div> 
       <!-- Navigation Trigger -->
     <div class="nav-trigger" onclick="toggleNav()">
         <span></span>
