@@ -110,16 +110,36 @@ gtag('config', 'G-CC97XVLJNB');
             opacity: 0;
             animation: emerge 3s ease-out forwards;
             animation-delay: 2s;
-        }
-.brand-title{
-font-family:'Cormorant Garamond', serif;
-font-size:14px;
-letter-spacing:8px;
-color:#aaa;
-margin-bottom:40px;
-text-align:center;
-opacity:1;
+            
 }
+.brand-title{
+    font-family:'Cormorant Garamond', serif;
+    font-size:14px;
+    letter-spacing:8px;
+    color:#aaa;
+    margin-bottom:40px;
+    text-align:center;
+    opacity:1;
+}
+
+.about-title{
+    font-family:'Cormorant Garamond', serif;
+    font-size:56px;
+    font-weight:400;
+    color:#f5f5f0;
+    text-align:center;
+    margin:20px 0 30px;
+}
+
+.about-text{
+    max-width:760px;
+    margin:0 auto;
+    text-align:center;
+    font-size:22px;
+    line-height:1.9;
+    color:#8d8d8d;
+}
+
         /* Navigation - Hidden by default */
         .nav-trigger {
             position: fixed;
@@ -661,25 +681,26 @@ opacity:1;
         <p class="void-sub">Silence • Structure • Discipline</p>
     </section>
 
-    <!-- Philosophy -->
-    <section id="philosophy">
-        <p class="section-title">The Foundation</p>
-        <div class="pillars">
-            <div class="pillar">
-                <span class="pillar-word">Silence</span>
-                <p class="pillar-desc">Noise is the enemy of clarity. In silence, the mind finds its true frequency. Speak only when it compounds power.</p>
-            </div>
-            <div class="pillar">
-                <span class="pillar-word">Structure</span>
-                <p class="pillar-desc">Empires require architecture. Without systems, willpower is a finite resource that depletes. Build the machine.</p>
-            </div>
-            <div class="pillar">
-                <span class="pillar-word">Discipline</span>
-                <p class="pillar-desc">Not motivation. Not inspiration. The daily practice of doing what is required, regardless of circumstance.</p>
-            </div>
-        </div>
-    </section>
+ <!-- About -->
+ <section id="about">
+   
+      <p class="section-title">ABOUT</p>
 
+     <h2 class="about-title">
+          The Quiet Standard
+     </h2>
+
+     <p class="about-text">
+         The Quiet Standard is a design house exploring architecture, philosophy, disciplined living, and collectible objects.
+
+         We believe a meaningful life is not assembled through motivation, but through systems, taste, patience, and repetition.
+
+         Everything published here exists to help build things that outlive their maker.
+    </p>
+
+</section>
+
+<!-- Archive -->
     <!-- Archive -->
     <section id="archive">
         <p class="section-title">The Empire</p>
