@@ -79,47 +79,70 @@ gtag('config', 'G-CC97XVLJNB');
         }
 
         /* The Void - Landing */
-        .void {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            background: var(--void);
-        }
+       .void{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+    background:var(--void);
 
-        .void-text {
-            font-family: var(--serif);
-            font-size: clamp(2.2rem, 6vw, 4.5rem);
-            font-weight: 400;
-            letter-spacing: 0.05em;
-            text-align: center;
-            opacity: 0;
-            animation: emerge 3s ease-out forwards;
-            animation-delay: 0.5s;
-        }
-
-        .void-sub {
-            font-family: var(--sans);
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.3em;
-            color: var(--ash);
-            margin-top: 2rem;
-            opacity: 0;
-            animation: emerge 3s ease-out forwards;
-            animation-delay: 2s;
-            
+    padding:80px 40px 70px;
 }
+.hero-content{
+    width:min(92%, 760px);
+    margin:0 auto;
+    display:flex;
+    flex-direction:column;
+   align-items:center;
+   justify-content:center;
+   gap:14px;
+}
+      .void-text{
+         font-family:'Cormorant Garamond', serif;
+         font-size:clamp(3rem, 6vw, 5rem);
+         font-weight:300;
+         line-height:1.04;
+         letter-spacing:-0.02em;
+         text-align:center;
+         color:#f5f5f0;
+
+         max-width:760px;
+         margin:0 
+
+         opacity:0;
+         animation:emerge 3s ease-out forwards;
+         animation-delay:.5s;
+         }
+        
+
+       .void-sub{
+    font-family:'Cormorant Garamond', serif;
+    font-size:13px;
+    font-weight:400;
+    text-transform:uppercase;
+    letter-spacing:0.45em;
+    color:#8f8a83;
+
+    margin-top:0;
+
+    opacity:0;
+    animation:emerge 3s ease-out forwards;
+    animation-delay:2s;
+}
+            
 .brand-title{
     font-family:'Cormorant Garamond', serif;
-    font-size:14px;
-    letter-spacing:8px;
-    color:#aaa;
-    margin-bottom:40px;
+    font-size:13px;
+    font-weight:400;
+    letter-spacing:0.55em;
+    color:#9a948d;
     text-align:center;
-    opacity:1;
+    margin-bottom:0;
+
+    opacity:0;
+    animation:emerge 3s ease-out forwards;
 }
 
 .about-title{
@@ -234,14 +257,25 @@ gtag('config', 'G-CC97XVLJNB');
         }
 
         /* Sections */
-        section {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 4rem 2rem;
-            position: relative;
+       section{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    width:min(100%,1100px);
+    margin:0 auto;
+    padding:120px 40px;
+
+    position:relative;
+}
+
+@media (max-width:768px){
+    section{
+        padding:90px 28px;
+    }
+
         }
 
         .section-title {
@@ -631,7 +665,13 @@ gtag('config', 'G-CC97XVLJNB');
   text-align:center;
   margin-bottom:5px;
 }
-
+.brand-q{
+    font-family:'Playfair Display', serif;
+    font-weight:500;
+    font-size:1.06em;
+    display:inline-block;
+    transform:translateY(1px);
+}
 .philosophy{
   font-size:24px;
   text-align:center;
@@ -680,12 +720,27 @@ gtag('config', 'G-CC97XVLJNB');
     </nav>
 
     <!-- The Void -->
-    <section class="void">
-        <h2 class="brand-title">THE QUIET STANDARD</h2>
-        <h1 class="void-text">Control the mind.<br>Raise the standard.</h1>
-        <p class="void-sub">Silence • Structure • Discipline</p>
-    </section>
+  <section class="void">
 
+    <div class="hero-content">
+
+        <h2 class="brand-title">
+            THE
+            <span class="brand-q">Q</span>UIET STANDARD
+        </h2>
+
+        <h1 class="void-text">
+            Control the mind.<br>
+            Raise the standard.
+        </h1>
+
+        <p class="void-sub">
+            Silence • Structure • Discipline
+        </p>
+
+    </div>
+
+</section>
  <!-- About -->
  <section id="about">
    
