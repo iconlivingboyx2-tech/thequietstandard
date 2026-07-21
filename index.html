@@ -407,11 +407,18 @@ gtag('config', 'G-CC97XVLJNB');
             opacity: 1;
         }
 
-        .archive-item:hover {
-            border-color: var(--ash);
-            transform: scale(1.02);
-            z-index: 10;
-        }
+      .archive-item:hover {
+    border-color: var(--ash);
+    transform: translateY(-6px);
+    z-index: 10;
+}
+        .archive-item:hover .archive-title{
+    color:#f5f1ea;
+}
+
+.archive-item:hover .archive-label{
+    opacity:1;
+}
 .archive-label{
     font-family:'IBM Plex Mono', monospace;
     font-size:12px;
