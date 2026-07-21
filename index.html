@@ -406,7 +406,10 @@ gtag('config', 'G-CC97XVLJNB');
             opacity: 0;
             transition: opacity 0.4s ease;
         }
-
+.archive-item{
+    text-decoration:none;
+    color:inherit;
+}
         .archive-item:hover::before {
             opacity: 1;
         }
@@ -615,16 +618,57 @@ gtag('config', 'G-CC97XVLJNB');
         }
 
         /* Mobile Adjustments */
-        @media (max-width: 768px) {
-            .archive-grid {
-                grid-template-columns: 1fr;
-            }
+    @media (max-width:768px){
+
+    .hero-title{
+        font-size:4rem;
+        line-height:1.08;
+        letter-spacing:-0.02em;
+    }
+
+    .hero-brand{
+        font-size:13px;
+        letter-spacing:.45em;
+    }
+
+    .hero-subtitle{
+        font-size:13px;
+        letter-spacing:.35em;
+        line-height:1.8;
+    }
+.about-heading{
+    font-size:2.8rem;
+    line-height:1.15;
+}
+
+.about-body p{
+    font-size:1.35rem;
+    line-height:1.8;
+}
+
+.about-body .closing{
+    font-size:2.7rem;
+    line-height:1.3;
+}
             
-            .nav-trigger {
-                top: 1.5rem;
-                right: 1.5rem;
-            }
-        }
+    section{
+        padding:90px 8%;
+    }
+
+    .archive-grid{
+        grid-template-columns:1fr;
+        gap:24px;
+    }
+
+    .archive-item{
+        min-height:180px;
+        padding:32px 28px;
+    }
+
+    .nav-trigger{
+        top:1.5rem;
+        right:1.5rem;
+    }
 
         /* Selection Color */
         ::selection {
@@ -741,12 +785,14 @@ gtag('config', 'G-CC97XVLJNB');
     </div>
 
     <!-- Navigation Menu -->
-    <nav class="nav-menu" id="navMenu">
-        <a href="#philosophy" onclick="toggleNav()">Philosophy</a>
-        <a href="#archive" onclick="toggleNav()">Archive</a>
-        <a href="#practice" onclick="toggleNav()">Practice</a>
-        <a href="#gate" onclick="toggleNav()">The Gate</a>
-    </nav>
+   <nav class="nav-menu" id="navMenu">
+    <a href="#about" onclick="toggleNav()">About</a>
+    <a href="#foundation" onclick="toggleNav()">Foundation</a>
+    <a href="#practice" onclick="toggleNav()">Philosophy</a>
+    <a href="#archive" onclick="toggleNav()">Archive</a>
+    <a href="journal/index.html" onclick="toggleNav()">Journal</a>
+    <a href="#gate" onclick="toggleNav()">The Gate</a>
+</nav>
 
     <!-- The Void -->
   <section class="void">
@@ -924,11 +970,10 @@ The <span class="brand-q">Q</span>uiet Standard is an archive assembled slowly t
 
     <div class="archive-grid">
 
-        <div class="archive-item">
-            <p class="archive-label">ARCHIVE I</p>
-            <h3 class="archive-title">The Site</h3>
-        </div>
-
+       <a href="archive/archive-i.html" class="archive-item">
+    <p class="archive-label">ARCHIVE I</p>
+    <h3 class="archive-title">The Site</h3>
+</a>
         <div class="archive-item">
             <p class="archive-label">ARCHIVE II</p>
             <h3 class="archive-title">The Framework</h3>
