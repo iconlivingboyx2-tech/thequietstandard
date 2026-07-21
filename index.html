@@ -562,7 +562,25 @@ gtag('config', 'G-CC97XVLJNB');
             position: relative;
             overflow: hidden;
         }
+.gate-button{
+    width:100%;
+    max-width:320px;
+    margin-top:40px;
 
+    padding:18px 24px;
+
+    background:transparent;
+    border:1px solid rgba(255,255,255,.18);
+
+    color:rgba(255,255,255,.45);
+
+    font-family:'IBM Plex Mono', monospace;
+    font-size:.78rem;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+
+    cursor:not-allowed;
+}
         .gate-form button::before {
             content: '';
             position: absolute;
@@ -791,7 +809,8 @@ gtag('config', 'G-CC97XVLJNB');
     <a href="#foundation" onclick="toggleNav()">Foundation</a>
     <a href="#philosophy" onclick="toggleNav()">Philosophy</a>
     <a href="#archive" onclick="toggleNav()">Archive</a>
-    <a href="journal.html" onclick="toggleNav()">Journal</a>
+    <a href="#journal" onclick="toggleNav()">Journal</a>
+   <a href="#thequietstandard" onclick="toggleNav()">Publication</a>
     <a href="#gate" onclick="toggleNav()">The Gate</a>
 </nav>
     <!-- The Void -->
@@ -875,7 +894,56 @@ The <span class="brand-q">Q</span>uiet Standard is an archive assembled slowly t
     </div>
    
     </section>
+<section id="foundation">
 
+    <p class="section-title">FOUNDATION</p>
+
+    <div class="archive-grid">
+
+        <div class="foundation-quote">
+            <p class="foundation-label">
+                Observation I
+            </p>
+
+            <h2 class="foundation-statement">
+                Empires require structure.
+            </h2>
+        </div>
+
+        <div class="archive-item">
+            <p class="archive-text">Thought becomes<br>structure</p>
+            <span class="archive-views">⌘ 000</span>
+        </div>
+
+        <div class="archive-item">
+            <p class="archive-text">Structure<br>precedes scale</p>
+            <span class="archive-views">⌘ 001</span>
+        </div>
+
+        <div class="archive-item">
+            <p class="archive-text">Attention is<br>architecture</p>
+            <span class="archive-views">⌘ 002</span>
+        </div>
+
+        <div class="archive-item">
+            <p class="archive-text">Discipline<br>outlasts motivation</p>
+            <span class="archive-views">⌘ 003</span>
+        </div>
+
+        <div class="archive-item">
+            <p class="archive-text">Standards create<br>identity</p>
+            <span class="archive-views">⌘ 004</span>
+        </div>
+
+        <div class="archive-item">
+            <p class="archive-text">What repeats<br>remains</p>
+            <span class="archive-views">⌘ 005</span>
+        </div>
+
+    </div>
+
+</section>
+        
 <!--philosophy-->
 <section id="philosophy">
 
@@ -944,23 +1012,112 @@ The <span class="brand-q">Q</span>uiet Standard is an archive assembled slowly t
     </div>
 
 </section>
-        
-    <!-- The Gate -->
-    <section id="gate">
-        <div class="qs-entry-logo">QS.</div>
-        <p class="section-title">Entry</p                                                             
-        <div class="gate">
-            <p class="gate-text">This is not for everyone. The Quiet Standard is for those building something that outlives them. If that is you, proceed.</p>
-            <form class="gate-form" action="https://formspree.io/f/mjgagnzl" method="POST">
-                <input type="text" name="name" placeholder="Name" required>
+        <!-- Journal -->
+<section id="journal">
 
-<input type="email" name="contact" placeholder="Contact" required>
+    <p class="section-title">JOURNAL</p>
 
-<textarea name="building" placeholder="What are you building?" rows="3" required></textarea>
-                <button type="submit">Request Entry</button>
-            </form>
+    <p class="archive-intro">
+        Essays, observations and field notes documenting
+        architecture, philosophy and disciplined living.
+    </p>
+
+    <div class="archive-grid">
+
+        <a href="journal/journal-001.html" class="archive-item">
+            <p class="archive-label">JOURNAL I</p>
+            <h3 class="archive-title">On Attention</h3>
+        </a>
+
+        <div class="archive-item">
+            <p class="archive-label">JOURNAL II</p>
+            <h3 class="archive-title">The Weight of Standards</h3>
         </div>
-    </section>
+
+        <div class="archive-item">
+            <p class="archive-label">JOURNAL III</p>
+            <h3 class="archive-title">Walking Without Destination</h3>
+        </div>
+
+        <div class="archive-item">
+            <p class="archive-label">JOURNAL IV</p>
+            <h3 class="archive-title">Architecture Begins in Observation</h3>
+        </div>
+
+    </div>
+
+</section>
+       <!-- The Quiet Standard -->
+<section id="thequietstandard">
+
+    <p class="section-title">PUBLICATION</p>
+
+    <div class="gate">
+
+        <p class="gate-text">
+The Quiet Standard is a quiet publication exploring architecture,
+philosophy, observation and disciplined living.
+
+Each edition is written slowly and released only when there is
+something worth preserving.
+
+Subscribers receive new editions before they enter the public archive.
+</p>
+
+        <form class="gate-form"
+              action="https://formspree.io/f/mjgagnzl"
+              method="POST">
+
+            <input
+                type="text"
+                name="name"
+                placeholder="Name"
+                required>
+
+            <input
+                type="email"
+                name="email"
+                placeholder="Email Address"
+                required>
+
+           <button type="submit" class="gate-button">
+    Receive Future Editions
+</button>
+    </div>
+
+</section>
+        
+<!-- The Gate -->
+<section id="gate">
+
+    <div class="qs-entry-logo">QS.</div>
+
+    <p class="section-title">THE GATE</p>
+
+    <div class="gate">
+
+        <p class="gate-text">
+            The Gate is currently closed.
+        </p>
+
+        <p class="gate-text">
+            Future members will receive early access to
+            collector editions, journal releases,
+            private observations and limited archive drops.
+        </p>
+
+        <p class="gate-text">
+            Entry will open when the first collector
+            archive is released.
+        </p>
+
+        <button class="gate-button" disabled>
+            Opening Soon
+        </button>
+
+    </div>
+
+</section>
 <div class="brand-bar">
   <span class="ig-handle">@thequietstd</span>
 
