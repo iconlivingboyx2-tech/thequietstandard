@@ -367,15 +367,14 @@ gtag('config', 'G-CC97XVLJNB');
         }
 
         /* Archive Section - The Grid */
-       .archive-grid{
-          display:grid;
-          grid-template-columns:repeat(3,1fr);
-          gap:28px;
-          max-width:1200px;
-          margin:0 auto;
-          align-items:start;
-
-        }
+.archive-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:28px;
+    max-width:1200px;
+    margin:0 auto;
+    align-items:start;
+}
 
        .archive-item{
           border:1px solid rgba(255,255,255,.12);
@@ -386,6 +385,8 @@ gtag('config', 'G-CC97XVLJNB');
           justify-content:space-between;
           background:rgba(255,255,255,.015);
           transition:.35s ease;
+          position: relative;
+          overflow: hidden;
         }
 
 .archive-item:hover{
@@ -415,42 +416,33 @@ gtag('config', 'G-CC97XVLJNB');
             transform: scale(1.02);
             z-index: 10;
         }
+.archive-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:#8f8a83;
+    margin-bottom:18px;
+}
 
-      .archive-text{
-         font-family:'Cormorant Garamond', serif;
-         font-size:2rem;
-         font-weight:300;
-         line-height:1.25;
-         text-align:left;
-         color:#f5f5f0;
-         margin:0;
-         z-index:2;
-
-        }
-
-       .archive-views{
-          position:absolute;
-          bottom:1.5rem;
-          left:1.5rem;
-          font-family:'IBM Plex Mono', monospace;
-          font-size:12px;
-          letter-spacing:.18em;
-          color:#8f8a83;
-          display:flex;
-          align-items:center;
-          gap:.5rem;
-          opacity:1;
-       }
-
-        .archive-item:hover .archive-views {
-            opacity: 1;
-        }
-
-        /* Practice Section */
-        .practice-content {
-            max-width: 600px;
-            text-align: center;
-        }
+.archive-title{
+    font-family:'Cormorant Garamond', serif;
+    font-size:2rem;
+    font-weight:300;
+    line-height:1.2;
+    color:#f5f5f0;
+    margin:0;
+    letter-spacing:-0.02em;
+}
+     .archive-intro{
+        max-width:620px;
+        margin:24px auto 70px;
+        text-align:center;
+        color:#9d9d9d;
+        font-size:15px;
+        line-height:1.9;
+} 
+       
 
         .practice-intro {
             font-family: var(--serif);
@@ -886,28 +878,76 @@ The <span class="brand-q">Q</span>uiet Standard is an archive assembled slowly t
    
     </section>
 
-    <!-- Practice -->
-    <section id="practice">
-        <p class="section-title">The Work</p>
-        <div class="practice-content">
-            <p class="practice-intro">Philosophy without practice is noise. These are the systems. The architecture of a life built, not wished for.</p>
-            <div class="protocols">
-                <div class="protocol">
-                    <h3 class="protocol-name">The Morning Protocol</h3>
-                    <p class="protocol-desc">Silence before input. No phone. No news. Only the mind and the work that matters. 90 minutes of deep creation.</p>
-                </div>
-                <div class="protocol">
-                    <h3 class="protocol-name">The Standard Journal</h3>
-                    <p class="protocol-desc">Daily audit. Three standards maintained. Three standards compromised. No excuses, only adjustment.</p>
-                </div>
-                <div class="protocol">
-                    <h3 class="protocol-name">The Empire Map</h3>
-                    <p class="protocol-desc">Weekly architecture review. Systems checked. Structures reinforced. Weakness identified and eliminated.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Practice -->
+<section id="practice">
 
+    <p class="section-title">PHILOSOPHY</p>
+
+    <p class="practice-intro">
+        Ideas become architecture only when they are lived.
+        These are the principles, observations and protocols
+        that shape a disciplined life.
+    </p>
+
+    <div class="protocols">
+
+        <div class="protocol">
+            <h3 class="protocol-name">Observation</h3>
+            <p class="protocol-desc">Learn to see before attempting to change.</p>
+        </div>
+
+        <div class="protocol">
+            <h3 class="protocol-name">Framework</h3>
+            <p class="protocol-desc">Principles refined into repeatable systems.</p>
+        </div>
+
+        <div class="protocol">
+            <h3 class="protocol-name">Discipline</h3>
+            <p class="protocol-desc">Consistency expressed through daily practice.</p>
+        </div>
+
+    </div><!-- closes .protocols -->
+
+</section>
+           
+        
+<!-- Archive -->
+<section id="archive">
+
+    <p class="section-title">ARCHIVE</p>
+
+    <p class="archive-intro">
+        An evolving collection of observations, essays,
+        frameworks and editions documenting the study of
+        architecture, philosophy and disciplined living.
+    </p>
+
+    <div class="archive-grid">
+
+        <div class="archive-item">
+            <p class="archive-label">ARCHIVE I</p>
+            <h3 class="archive-title">The Site</h3>
+        </div>
+
+        <div class="archive-item">
+            <p class="archive-label">ARCHIVE II</p>
+            <h3 class="archive-title">The Framework</h3>
+        </div>
+
+        <div class="archive-item">
+            <p class="archive-label">ARCHIVE III</p>
+            <h3 class="archive-title">Observation Log</h3>
+        </div>
+
+        <div class="archive-item">
+            <p class="archive-label">ARCHIVE IV</p>
+            <h3 class="archive-title">Collected Essays</h3>
+        </div>
+
+    </div>
+
+</section>
+        
     <!-- The Gate -->
     <section id="gate">
         <div class="qs-entry-logo">QS.</div>
