@@ -78,76 +78,112 @@ gtag('config', 'G-CC97XVLJNB');
             background: var(--ash);
         }
 
-        /* The Void - Landing */
-       .void{
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    position:relative;
-    background:var(--void);
+  /* ---------------- HERO ---------------- */
 
-    padding:80px 40px 70px;
-}
 .hero-content{
-    width:min(92%, 760px);
+
+    width:min(92%,760px);
+
     margin:0 auto;
+
+    min-height:100vh;
+
+    padding-bottom:180px;
+
     display:flex;
+
     flex-direction:column;
-   align-items:center;
-   justify-content:center;
-   gap:14px;
+
+    justify-content:center;
+
+    align-items:center;
+
 }
-        .hero-title{
-    font-family:'Cormorant Garamond', serif;
-    font-size:clamp(4rem,8vw,7rem);
-    font-weight:300;
-    line-height:1;
-    letter-spacing:-0.02em;
+
+.hero-title{
+
+    margin:0;
+
+    text-align:center;
+
     color:#f5f5f0;
+
+    font-family:'Cormorant Garamond', serif;
+
+    font-size:clamp(3.3rem,7vw,5.7rem);
+
+    font-weight:300;
+
+    line-height:.92;
+
+}
+
+.hero-the{
+
+    display:block;
+
+    font-size:.42em;
+
+    margin-bottom:.42em;
+
+    letter-spacing:.02em;
+
+}
+
+.hero-q{
+
+    font-family:'Playfair Display', serif;
+
+    font-weight:500;
+
 }
 
 .hero-enter{
-    margin-top:90px;
+
+    margin-top:120px;
+
     display:flex;
+
     flex-direction:column;
+
     align-items:center;
-    gap:16px;
+
+    gap:18px;
+
     cursor:pointer;
-    opacity:.65;
-    transition:all .35s ease;
+
+    transition:.35s ease;
+
+    opacity:.7;
+
 }
 
 .hero-enter:hover{
+
     opacity:1;
+
     transform:translateY(4px);
+
 }
 
 .hero-arrow{
-    font-size:1rem;
-    margin-bottom:14px;
-    opacity:.7;
-}
-        
-.hero-link{
-    font-size:.72rem;
-    letter-spacing:.45em;
-    text-transform:uppercase;
-    color:#9d9d9d;
-}
-        
-.brand-title{
-    font-family:'Cormorant Garamond', serif;
-    font-size:13px;
-    font-weight:400;
-    letter-spacing:0.55em;
-    color:#9a948d;
-    text-align:center;
-    margin-bottom:0;
 
-    opacity:0;
-    animation:emerge 3s ease-out forwards;
+    font-size:.95rem;
+
+    opacity:.55;
+
+}
+
+.hero-link{
+
+    font-size:.72rem;
+
+    letter-spacing:.55em;
+
+    text-transform:uppercase;
+
+    color:#b8b8b8;
+
 }
 
 /* ---------- ABOUT ---------- */
@@ -670,6 +706,28 @@ gtag('config', 'G-CC97XVLJNB');
     margin:0 auto;
     gap:10px;
 }
+
+.hero-title{
+    font-size:clamp(2.9rem,11vw,4.2rem);
+    line-height:.95;
+}
+
+.hero-the{
+    margin-bottom:.35em;
+}
+            
+.hero-q{
+    font-family:'Playfair Display', serif;
+    font-weight:500;
+}
+.hero-enter{
+    margin-top:80px;
+}
+
+.hero-link{
+   font-size:.66rem;
+    letter-spacing:.38em;
+}
 .about-heading{
     font-size:2.3rem;
     line-height:1.15;
@@ -829,19 +887,32 @@ gtag('config', 'G-CC97XVLJNB');
     <a href="#gate" onclick="toggleNav()">The Gate</a>
 </nav>
           
-<div class="hero-content">
+<section class="void">
 
-    <h1 class="hero-title">
-        The Quiet Standard
-    </h1>
+    <div class="hero-content">
 
-    <div class="hero-enter" id="heroEnter">
-        <div class="hero-arrow">↓</div>
-        <div class="hero-link">Enter the Archive</div>
+        <h1 class="hero-title">
+
+            <span class="hero-the">The</span>
+
+            <span class="hero-q">Q</span>uiet<br>
+
+            Standard
+
+        </h1>
+
+        <div class="hero-enter" id="heroEnter">
+
+            <div class="hero-arrow">↓</div>
+
+            <div class="hero-link">
+                ENTER THE ARCHIVE
+            </div>
+
+        </div>
+
     </div>
 
-</div>
-          
 </section>
         
  <!-- About -->
