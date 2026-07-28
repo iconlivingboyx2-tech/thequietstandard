@@ -213,32 +213,21 @@ section{
         padding:180px 9vw;
     }
 
-  .display{
-
+    .display{
         font-size:46px;
-
         line-height:.95;
-
     }
 
-      .sub-display{
-
+    .sub-display{
         font-size:20px;
-
         line-height:1.55;
-
         margin-top:30px;
-
     }
 
-   .body-copy{
-
+    .body-copy{
         font-size:16px;
-
         line-height:2;
-
         margin-top:60px;
-
     }
 
     #hero{
@@ -249,47 +238,51 @@ section{
         margin-top:40px;
     }
 
-  .hero-statement{
-
-        font-size:25px;
-
-        line-height:1.08;
-
-        letter-spacing:-0.02em;
-
-        white-space:nowrap;
-
+    .hero-statement{
+        font-size:clamp(48px,12vw,60px);
+        max-width:330px;
         margin:70px auto 0;
-
+        line-height:.96;
+        letter-spacing:-.03em;
     }
 
-  .hero-enter{
-
+    .hero-enter{
         gap:42px;
-
         margin-top:430px;
-
     }
-.footer-nav{
-    width:100%;
-    min-width:0;
-    margin-top:90px;
+
+    .footer-layout{
+        grid-template-columns:1fr;
+        gap:90px;
+    }
+
+    .footer-nav{
+        width:100%;
+        min-width:0;
+        margin-top:90px;
+    }
+
+    .footer-nav a{
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+    }
+
+    .footer-title{
+        font-size:16px;
+    }
+
+    .footer-divider{
+        flex:1;
+        height:1px;
+        margin:0 20px;
+    }
+
+    .footer-number{
+        font-size:13px;
+    }
+
 }
-
-.footer-title{
-    font-size:16px;
-}
-
-.footer-divider{
-    width:44px;
-    margin:0 20px;
-}
-
-.footer-number{
-    font-size:13px;
-
-}
-
 /* ==========================================
    CHAPTER I
    THE COVER
@@ -611,6 +604,12 @@ footer a:hover{
 
 .footer-nav a:hover .footer-number{
     color:#fff;
+}
+   .footer-layout{
+    display:grid;
+    grid-template-columns:320px 1fr;
+    gap:120px;
+    align-items:start;
 }
 </style>
 
@@ -1294,12 +1293,7 @@ footer a:hover{
 
         <div style="border-top:1px solid #222;padding-top:90px;">
 
-           <div style="
-             display:flex;
-             justify-content:space-between;
-             align-items:flex-start;
-             gap:80px;">
-                <div>
+         <div class="footer-layout">
 
                     <div style="
                         font-family:'Cormorant Garamond',serif;
