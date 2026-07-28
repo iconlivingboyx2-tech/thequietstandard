@@ -578,40 +578,67 @@ body.entering .hero-enter{
 
     transition:all .6s ease;
 
+
+#footer{
+    padding:140px 12vw 80px;
 }
-footer a:hover{
-    color:#fff;
+
+.footer-top{
+    display:grid;
+    grid-template-columns:320px 1fr;
+    gap:120px;
+    align-items:start;
+
+    border-top:1px solid #222;
+    padding-top:80px;
 }
-   .footer-nav{
+
+.footer-brand h2{
+    font-family:"Cormorant Garamond",serif;
+    font-size:44px;
+    font-weight:400;
+    line-height:.95;
+    margin-bottom:28px;
+}
+
+.footer-brand p{
+    font-size:12px;
+    letter-spacing:.26em;
+    text-transform:uppercase;
+    color:#666;
+    line-height:1.9;
+}
+
+.footer-nav{
     display:flex;
     flex-direction:column;
-    gap:46px;
-    min-width:360px;
+    gap:42px;
 }
 
 .footer-nav a{
     display:flex;
     align-items:center;
     color:#f5f5f0;
-    text-decoration:none;
 }
 
 .footer-title{
+    width:220px;
     font-size:18px;
     font-weight:300;
 }
 
 .footer-divider{
-    width:58px;
+    flex:1;
     height:1px;
-    background:#333;
-    margin:0 24px;
+    background:#2b2b2b;
+    margin:0 26px;
 }
 
 .footer-number{
-    font-size:14px;
-    letter-spacing:.18em;
+    width:36px;
+    text-align:right;
     color:#666;
+    font-size:14px;
 }
 
 .footer-nav a:hover .footer-title{
@@ -625,12 +652,104 @@ footer a:hover{
 .footer-nav a:hover .footer-number{
     color:#fff;
 }
-.footer-layout{
-    display:grid;
-    grid-template-columns:220px 1fr;
-    gap:90px;
-    align-items:start;
+
+.footer-bottom{
+
+    border-top:1px solid #222;
+
+    margin-top:120px;
+
+    padding-top:60px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:34px;
+
 }
+
+.footer-copy,
+.footer-rights,
+.footer-instagram{
+
+    color:#555;
+
+    font-size:12px;
+
+    letter-spacing:.24em;
+
+    text-transform:uppercase;
+
+}
+
+.footer-instagram{
+
+    display:inline-block;
+
+    width:max-content;
+
+    text-decoration:none;
+
+    color:#777;
+
+    padding-bottom:70px;
+
+    transition:.3s;
+
+}
+
+.footer-instagram:hover{
+
+    color:#fff;
+
+}
+
+@media (max-width:900px){
+
+    #footer{
+        padding:90px 9vw 120px;
+    }
+
+    .footer-top{
+        grid-template-columns:1fr;
+        gap:70px;
+        padding-top:70px;
+    }
+
+    .footer-brand h2{
+        font-size:42px;
+    }
+
+    .footer-nav{
+        gap:34px;
+    }
+
+    .footer-title{
+        width:120px;
+        font-size:16px;
+    }
+
+    .footer-divider{
+        margin:0 18px;
+    }
+
+    .footer-number{
+        font-size:13px;
+    }
+
+    .footer-bottom{
+        margin-top:90px;
+        padding-top:45px;
+        gap:28px;
+    }
+
+    .footer-instagram{
+        padding-bottom:20px;
+    }
+
+}
+   
 </style>
 
 </head>
@@ -1311,112 +1430,82 @@ footer a:hover{
 
     <div class="container">
 
-<div style="border-top:1px solid #222;padding:80px 0 160px;">
-      
-         <div class="footer-layout">
+        <div class="footer-top">
 
-                    <div style="
-                        font-family:'Cormorant Garamond',serif;
-                        font-size:38px;
-                        line-height:1;
-                        margin-bottom:18px;">
+            <div class="footer-brand">
 
-                        The Quiet Standard
+                <h2>The Quiet Standard</h2>
 
-                    </div>
+                <p>
+                    Silence.<br>
+                    Structure.<br>
+                    Discipline.
+                </p>
 
-                    <div style="
-                        color:#666;
-                        font-size:13px;
-                        letter-spacing:.28em;
-                        text-transform:uppercase;">
+            </div>
 
-                        Silence. Structure. Discipline.
+            <nav class="footer-nav">
 
-                    </div>
+                <a href="#hero">
+                    <span class="footer-title">Cover</span>
+                    <span class="footer-divider"></span>
+                    <span class="footer-number">01</span>
+                </a>
 
-                </div>
+                <a href="#about">
+                    <span class="footer-title">About</span>
+                    <span class="footer-divider"></span>
+                    <span class="footer-number">02</span>
+                </a>
 
-               <div class="footer-nav">
+                <a href="#archive">
+                    <span class="footer-title">Archive</span>
+                    <span class="footer-divider"></span>
+                    <span class="footer-number">03</span>
+                </a>
 
-    <a href="#hero">
-        <span class="footer-title">Cover</span>
-        <span class="footer-divider"></span>
-        <span class="footer-number">01</span>
-    </a>
+                <a href="#journal">
+                    <span class="footer-title">Journal</span>
+                    <span class="footer-divider"></span>
+                    <span class="footer-number">04</span>
+                </a>
 
-    <a href="#about">
-        <span class="footer-title">About</span>
-        <span class="footer-divider"></span>
-        <span class="footer-number">02</span>
-    </a>
+                <a href="#collector-editions">
+                    <span class="footer-title">Collector Editions</span>
+                    <span class="footer-divider"></span>
+                    <span class="footer-number">05</span>
+                </a>
 
-    <a href="#archive">
-        <span class="footer-title">Archive</span>
-        <span class="footer-divider"></span>
-        <span class="footer-number">03</span>
-    </a>
+                <a href="#publication">
+                    <span class="footer-title">Publication</span>
+                    <span class="footer-divider"></span>
+                    <span class="footer-number">06</span>
+                </a>
 
-    <a href="#journal">
-        <span class="footer-title">Journal</span>
-        <span class="footer-divider"></span>
-        <span class="footer-number">04</span>
-    </a>
+            </nav>
 
-    <a href="#collector-editions">
-        <span class="footer-title">Collector Editions</span>
-        <span class="footer-divider"></span>
-        <span class="footer-number">05</span>
-    </a>
+        </div>
 
-    <a href="#publication">
-        <span class="footer-title">Publication</span>
-        <span class="footer-divider"></span>
-        <span class="footer-number">06</span>
-    </a>
+        <div class="footer-bottom">
 
-</div>
+            <div class="footer-copy">
+                © 2026 THE QUIET STANDARD
+            </div>
 
-          <div style="
-    margin-top:140px;
-    padding-top:40px;
-    border-top:1px solid #151515;
-">
+            <div class="footer-rights">
+                ALL RIGHTS RESERVED
+            </div>
 
-    <div style="
-        color:#555;
-        font-size:12px;
-        letter-spacing:.22em;
-        text-transform:uppercase;">
-        © 2026 The Quiet Standard
-    </div>
+            <a class="footer-instagram"
+               href="https://instagram.com/thequietstd"
+               target="_blank">
+               INSTAGRAM
+            </a>
 
-    <div style="
-        margin-top:30px;
-        color:#555;
-        font-size:12px;
-        letter-spacing:.22em;
-        text-transform:uppercase;">
-        All Rights Reserved
-    </div>
-
-<div style="margin-top:70px;">
-        <a href="https://instagram.com/thequietstd"
-           target="_blank"
-           style="
-           color:#666;
-           font-size:12px;
-           letter-spacing:.28em;
-           text-transform:uppercase;
-           text-decoration:none;
-           transition:.3s;">
-            Instagram
-        </a>
+        </div>
 
     </div>
 
-</div>
-           
 </footer>
 
 <script>
