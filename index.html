@@ -234,4 +234,1063 @@ section{
 
 }
 
+
+/* ==========================================
+   CHAPTER I
+   THE COVER
+========================================== */
+
+#hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    padding:0 8vw;
+
 }
+
+.hero-inner{
+
+    max-width:900px;
+
+    width:100%;
+
+}
+
+.hero-brand{
+
+    font-family:"Helvetica Neue",sans-serif;
+
+    font-size:13px;
+
+    letter-spacing:.45em;
+
+    text-transform:uppercase;
+
+    color:var(--muted);
+
+    margin-bottom:80px;
+
+}
+
+.brand-q{
+
+    font-family:"Playfair Display",serif;
+
+    font-weight:600;
+
+    text-transform:none;
+
+    letter-spacing:0;
+
+}
+
+.hero-statement{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-weight:400;
+
+    font-size:clamp(82px,9vw,138px);
+
+    line-height:.90;
+
+    letter-spacing:-.04em;
+
+}
+
+.hero-enter{
+
+    display:inline-flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:24px;
+
+    margin-top:140px;
+
+    font-size:12px;
+
+    letter-spacing:.45em;
+
+    text-transform:uppercase;
+
+    color:rgba(245,245,240,.72);
+
+    transition:color var(--transition),
+               transform var(--transition);
+
+}
+
+.hero-enter:hover{
+
+    color:#fff;
+
+    transform:translateY(6px);
+
+}
+
+.hero-arrow{
+
+    font-size:28px;
+
+    font-weight:300;
+
+}
+
+/* ==========================================
+   TITLE PAGE
+========================================== */
+
+#title-page{
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+.title-page-inner{
+
+    width:100%;
+
+    max-width:900px;
+
+}
+
+.title-brand{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:clamp(56px,6vw,84px);
+
+    font-weight:400;
+
+    line-height:.95;
+
+    letter-spacing:-.03em;
+
+    margin-bottom:80px;
+
+}
+
+.title-copy{
+
+    max-width:560px;
+
+    font-size:22px;
+
+    line-height:1.9;
+
+    font-weight:300;
+
+    color:var(--body);
+
+}
+
+/* ==========================================
+   HERO REVEAL
+========================================== */
+
+.hero-brand,
+.hero-statement,
+.hero-enter{
+
+    opacity:0;
+
+    animation:heroReveal 1.4s ease forwards;
+
+}
+
+.hero-statement{
+
+    animation-delay:.2s;
+
+}
+
+.hero-enter{
+
+    animation-delay:.5s;
+
+}
+
+@keyframes heroReveal{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+        filter:blur(8px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+        filter:blur(0);
+
+    }
+
+}
+/* ==========================================
+   TRANSITION
+========================================== */
+
+#transition-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#000;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:opacity .7s ease;
+
+    z-index:9999;
+
+}
+
+body.entering #transition-overlay{
+
+    opacity:1;
+
+}
+
+body.entering .hero-brand,
+body.entering .hero-statement,
+body.entering .hero-enter{
+
+    opacity:0;
+
+    transform:translateY(-40px);
+
+    transition:all .6s ease;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="transition-overlay"></div>
+
+<!-- =======================================
+     CHAPTER I
+     COVER
+======================================= -->
+
+<section id="hero">
+
+    <div class="hero-inner">
+
+        <p class="hero-brand">
+            The <span class="brand-q">Q</span>uiet Standard
+        </p>
+
+        <h1 class="hero-statement">
+            Control the mind.<br>
+            Raise the standard.
+        </h1>
+
+        <a href="#title-page"
+           id="enterArchive"
+           class="hero-enter">
+
+            ENTER
+
+            <span class="hero-arrow">↓</span>
+
+        </a>
+
+    </div>
+
+</section>
+
+<!-- =======================================
+     TITLE PAGE
+======================================= -->
+
+<section id="title-page">
+
+    <div class="container">
+
+        <div class="title-page-inner">
+
+            <h2 class="title-brand">
+                The Quiet Standard
+            </h2>
+
+            <p class="title-copy">
+                An evolving design house devoted to architecture,
+                philosophy and disciplined living.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- =======================================
+     CHAPTER II
+     ABOUT
+======================================= -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="section-label">
+            About
+        </div>
+
+        <h2 class="display">
+            Architecture is more
+            than structure.
+        </h2>
+
+        <p class="sub-display">
+            It is a discipline of observation,
+            proportion and restraint.
+        </p>
+
+        <div class="body-copy">
+
+            The Quiet Standard is an evolving design house devoted to the enduring principles that shape architecture, philosophy and disciplined living.
+
+            <br><br>
+
+            Through observation, systems and thoughtful design, it studies how lasting structures are formed, not only in the built environment, but in the way we think and live.
+
+        </div>
+
+    </div>
+
+</section>
+<!-- =======================================
+     CHAPTER III
+     FOUNDATION
+======================================= -->
+
+<section id="foundation">
+
+    <div class="container">
+
+        <div class="section-label">
+            Foundation
+        </div>
+
+        <h2 class="display">
+            Every enduring
+            structure begins
+            before it is built.
+        </h2>
+
+        <p class="sub-display">
+            Observation precedes order.<br>
+            Order precedes structure.<br>
+            Structure precedes permanence.
+        </p>
+
+        <div class="body-copy">
+
+            The Foundation records the principles that shape every archive,
+            journal and collector edition published by The Quiet Standard.
+
+            <br><br>
+
+            These are not rules to be followed, but observations refined
+            through architecture, disciplined living and careful attention
+            over time.
+
+        </div>
+
+    </div>
+
+</section>
+<!-- =======================================
+     CHAPTER IV
+     PHILOSOPHY
+======================================= -->
+
+<section id="philosophy">
+
+    <div class="container">
+
+        <div class="section-label">
+            Philosophy
+        </div>
+
+        <div style="max-width:900px">
+
+            <div class="display">
+
+                Learn to observe<br>
+                before attempting<br>
+                to change.
+
+            </div>
+
+        </div>
+
+        <div style="margin-top:180px;max-width:700px">
+
+            <div style="display:flex;justify-content:space-between;border-top:1px solid #222;padding-top:36px;margin-bottom:80px;">
+
+                <span style="letter-spacing:.35em;font-size:12px;color:#666;text-transform:uppercase;">
+                    Observation
+                </span>
+
+                <span style="color:#666;">
+                    I
+                </span>
+
+            </div>
+
+            <p class="body-copy" style="margin-top:0">
+
+                Every enduring structure begins with attention.
+
+                Before there is discipline, there is observation.
+
+                Before there is architecture, there is the ability to see.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ==========================================
+     CHAPTER V
+     ARCHIVE
+========================================== -->
+
+<section id="archive">
+
+    <div class="container">
+
+        <div class="section-label">
+            Archive
+        </div>
+
+        <h2 class="display">
+            Every archive is a record<br>
+            of sustained attention.
+        </h2>
+
+        <p class="sub-display">
+            Architecture.<br>
+            Observation.<br>
+            Time.
+        </p>
+
+        <div class="body-copy">
+
+            The Archive is the permanent record of The Quiet Standard.
+
+            <br><br>
+
+            Every edition documents an observation rather than a conclusion.
+            Each archive is intended to stand independently while contributing
+            to a larger body of work that grows over time.
+
+        </div>
+
+        <div style="margin-top:180px;">
+
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:90px;">
+
+                <div>
+
+                    <div class="section-label">
+                        Archive I
+                    </div>
+
+                    <div class="sub-display" style="margin-top:0;">
+                        The Site
+                    </div>
+
+                    <div class="body-copy" style="margin-top:40px;">
+                        Observation 2026
+                    </div>
+
+                </div>
+
+                <div>
+
+                    <div class="section-label">
+                        Archive II
+                    </div>
+
+                    <div class="sub-display" style="margin-top:0;">
+                        The Framework
+                    </div>
+
+                    <div class="body-copy" style="margin-top:40px;">
+                        Structure · Ongoing
+                    </div>
+
+                </div>
+
+                <div>
+
+                    <div class="section-label">
+                        Archive III
+                    </div>
+
+                    <div class="sub-display" style="margin-top:0;">
+                        The Horizon
+                    </div>
+
+                    <div class="body-copy" style="margin-top:40px;">
+                        Landscape · Forthcoming
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ==========================================
+     CHAPTER VI
+     JOURNAL
+========================================== -->
+
+<section id="journal">
+
+    <div class="container">
+
+        <div class="section-label">
+            Journal
+        </div>
+
+        <h2 class="display">
+            Every enduring idea<br>
+            begins as an observation.
+        </h2>
+
+        <p class="sub-display">
+            Essays.<br>
+            Field notes.<br>
+            Quiet studies.
+        </p>
+
+        <div class="body-copy">
+
+            The Journal records observations before they become archives.
+            It is a place for unfinished thoughts, recurring questions and
+            slow investigation.
+
+            <br><br>
+
+            Each entry is published only when it contributes something worth
+            preserving. The collection grows deliberately, one observation at
+            a time.
+
+        </div>
+
+        <div style="margin-top:180px;display:grid;gap:80px;">
+
+            <div>
+
+                <div class="section-label">
+                    Journal I
+                </div>
+
+                <div class="sub-display" style="margin-top:0;">
+                    On Attention
+                </div>
+
+            </div>
+
+            <div>
+
+                <div class="section-label">
+                    Journal II
+                </div>
+
+                <div class="sub-display" style="margin-top:0;">
+                    The Weight of Standards
+                </div>
+
+            </div>
+
+            <div>
+
+                <div class="section-label">
+                    Journal III
+                </div>
+
+                <div class="sub-display" style="margin-top:0;">
+                    Walking Without Destination
+                </div>
+
+            </div>
+
+            <div>
+
+                <div class="section-label">
+                    Journal IV
+                </div>
+
+                <div class="sub-display" style="margin-top:0;">
+                    Architecture Begins in Observation
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ==========================================
+     CHAPTER VII
+     COLLECTOR EDITIONS
+========================================== -->
+
+<section id="collector-editions">
+
+    <div class="container">
+
+        <div class="section-label">
+            Collector Editions
+        </div>
+
+        <h2 class="display">
+            Designed to endure.<br>
+            Produced with intention.
+        </h2>
+
+        <p class="sub-display">
+            Limited editions.<br>
+            Museum materials.<br>
+            Permanent collections.
+        </p>
+
+        <div class="body-copy">
+
+            Collector Editions transform selected archives into physical
+            objects intended to live beyond the screen.
+
+            <br><br>
+
+            Every edition is produced using archival materials, individually
+            numbered and accompanied by a certificate of authenticity.
+            Nothing is mass produced. Nothing is temporary.
+
+        </div>
+
+        <div style="margin-top:180px;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:90px;">
+
+            <div>
+
+                <div class="section-label">
+                    Material
+                </div>
+
+                <div class="sub-display" style="margin-top:0;">
+                    Archival Paper
+                </div>
+
+            </div>
+
+            <div>
+
+                <div class="section-label">
+                    Finish
+                </div>
+
+                <div class="sub-display" style="margin-top:0;">
+                    Museum Framing
+                </div>
+
+            </div>
+
+            <div>
+
+                <div class="section-label">
+                    Authentication
+                </div>
+
+                <div class="sub-display" style="margin-top:0;">
+                    Numbered Edition
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ==========================================
+     CHAPTER VIII
+     PUBLICATION
+========================================== -->
+
+<section id="publication">
+
+    <div class="container">
+
+        <div class="section-label">
+            Publication
+        </div>
+
+        <h2 class="display">
+            Published only<br>
+            when it deserves<br>
+            to remain.
+        </h2>
+
+        <p class="sub-display">
+            Essays.<br>
+            Editions.<br>
+            Announcements.
+        </p>
+
+        <div class="body-copy">
+
+            The Quiet Standard is published deliberately rather than
+            frequently.
+
+            <br><br>
+
+            Subscribers receive new essays, collector editions and
+            archive releases before they enter the permanent public
+            archive.
+
+        </div>
+
+        <div style="margin-top:180px;max-width:640px;">
+
+            <input
+                type="text"
+                placeholder="Your name"
+                style="width:100%;background:none;border:none;border-bottom:1px solid #222;padding:18px 0;color:#f5f5f0;font-size:16px;margin-bottom:32px;outline:none;">
+
+            <input
+                type="email"
+                placeholder="Email address"
+                style="width:100%;background:none;border:none;border-bottom:1px solid #222;padding:18px 0;color:#f5f5f0;font-size:16px;margin-bottom:48px;outline:none;">
+
+            <button style="
+                padding:18px 36px;
+                border:1px solid #333;
+                letter-spacing:.3em;
+                text-transform:uppercase;
+                font-size:12px;
+                transition:.3s;
+            ">
+                Receive Future Editions
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ==========================================
+     CHAPTER IX
+     THE HOUSE
+========================================== -->
+
+<section id="house">
+
+    <div class="container">
+
+        <div class="section-label">
+            The House
+        </div>
+
+        <h2 class="display">
+            A design house<br>
+            built slowly.
+        </h2>
+
+        <p class="sub-display">
+            Architecture.<br>
+            Objects.<br>
+            Furniture.<br>
+            Books.
+        </p>
+
+        <div class="body-copy">
+
+            The Quiet Standard is an evolving design house exploring how
+            architecture, material craft and disciplined living extend into
+            everyday objects.
+
+            <br><br>
+
+            Future work will include collector editions, furniture,
+            lighting, textiles, publications and spaces, each developed
+            with the same commitment to permanence and restraint.
+
+        </div>
+
+        <div style="margin-top:180px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:80px;">
+
+            <div>
+
+                <div class="section-label">
+                    Future Object
+                </div>
+
+                <div class="sub-display" style="margin-top:0;">
+                    Furniture
+                </div>
+
+            </div>
+
+            <div>
+
+                <div class="section-label">
+                    Future Object
+                </div>
+
+                <div class="sub-display" style="margin-top:0;">
+                    Lighting
+                </div>
+
+            </div>
+
+            <div>
+
+                <div class="section-label">
+                    Future Object
+                </div>
+
+                <div class="sub-display" style="margin-top:0;">
+                    Rugs
+                </div>
+
+            </div>
+
+            <div>
+
+                <div class="section-label">
+                    Future Object
+                </div>
+
+                <div class="sub-display" style="margin-top:0;">
+                    Architecture
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ==========================================
+     CHAPTER X
+     THE GATE
+========================================== -->
+
+<section id="gate">
+
+    <div class="container">
+
+        <div class="section-label">
+            The Gate
+        </div>
+
+        <h2 class="display">
+            The archive<br>
+            remains open.
+        </h2>
+
+        <p class="sub-display">
+            Enter slowly.<br>
+            Stay deliberately.
+        </p>
+
+        <div class="body-copy">
+
+            Membership to The Quiet Standard will open as the archive
+            continues to grow.
+
+            <br><br>
+
+            Members will receive early access to collector editions,
+            new journals, publications and future releases before they
+            become publicly available.
+
+        </div>
+
+        <div style="margin-top:180px;">
+
+            <a href="#publication"
+               style="
+               display:inline-block;
+               padding:18px 40px;
+               border:1px solid #333;
+               letter-spacing:.30em;
+               text-transform:uppercase;
+               font-size:12px;">
+               Join the Archive
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ==========================================
+     FOOTER
+========================================== -->
+
+<footer id="footer">
+
+    <div class="container">
+
+        <div style="border-top:1px solid #222;padding-top:90px;">
+
+            <div style="
+                display:flex;
+                justify-content:space-between;
+                align-items:flex-start;
+                flex-wrap:wrap;
+                gap:80px;">
+
+                <div>
+
+                    <div style="
+                        font-family:'Cormorant Garamond',serif;
+                        font-size:38px;
+                        line-height:1;
+                        margin-bottom:18px;">
+
+                        The Quiet Standard
+
+                    </div>
+
+                    <div style="
+                        color:#666;
+                        font-size:13px;
+                        letter-spacing:.28em;
+                        text-transform:uppercase;">
+
+                        Silence. Structure. Discipline.
+
+                    </div>
+
+                </div>
+
+                <div style="
+                    display:flex;
+                    flex-direction:column;
+                    gap:18px;
+                    text-align:right;">
+
+                    <a href="#hero">Cover</a>
+
+                    <a href="#about">About</a>
+
+                    <a href="#archive">Archive</a>
+
+                    <a href="#journal">Journal</a>
+
+                    <a href="#collector-editions">Collector Editions</a>
+
+                    <a href="#publication">Publication</a>
+
+                </div>
+
+            </div>
+
+            <div style="
+                margin-top:140px;
+                padding-top:40px;
+                border-top:1px solid #151515;
+                display:flex;
+                justify-content:space-between;
+                flex-wrap:wrap;
+                gap:30px;
+                color:#555;
+                font-size:12px;
+                letter-spacing:.22em;
+                text-transform:uppercase;">
+
+                <div>
+                    © 2026 The Quiet Standard
+                </div>
+
+                <div>
+                    All Rights Reserved
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<script>
+
+const enter=document.getElementById("enterArchive");
+
+if(enter){
+
+enter.addEventListener("click",function(e){
+
+e.preventDefault();
+
+document.body.classList.add("entering");
+
+setTimeout(function(){
+
+document.querySelector("#title-page").scrollIntoView({
+behavior:"smooth"
+});
+
+setTimeout(function(){
+
+document.body.classList.remove("entering");
+
+},900);
+
+},650);
+
+});
+
+}
+
+</script>
+
+<div id="transition-overlay"></div>
+
+</body>
+
+</html>
