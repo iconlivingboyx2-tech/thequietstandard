@@ -119,7 +119,9 @@ html{
     font-weight:300;
 
     line-height:.92;
-
+    transition:
+    opacity .8s ease,
+    transform .8s ease;
 }
 
 .hero-the{
@@ -155,8 +157,9 @@ html{
     text-decoration:none;
     color:inherit;
 
-    transition:.35s ease;
-    opacity:.7;
+    transition:
+   opacity .8s ease,
+   transform .8s ease;
 }
 
 .hero-enter:hover{
@@ -865,6 +868,29 @@ html{
     opacity: 1;
   }
 }
+        #transition-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#000;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:opacity .7s ease;
+
+    z-index:9999;
+
+}
+
+body.entering #transition-overlay{
+
+    opacity:1;
+
+}
     </style>
 </head>
 <body> 
@@ -888,7 +914,7 @@ html{
     <a href="#gate" onclick="toggleNav()">The Gate</a>
 </nav>
           
-<section class="void">
+
 
     <div class="hero-content">
 
@@ -902,9 +928,11 @@ html{
 
         </h1>
 
-   <a href="#about" class="hero-enter" id="heroEnter">
+  <a href="#about" id="enterArchive" class="hero-enter">
 
-    <div class="hero-arrow">↓</div>
+    <div class="hero-arrow">
+        ↓
+    </div>
 
     <div class="hero-link">
         ENTER THE ARCHIVE
@@ -1259,7 +1287,35 @@ Receive Future Editions
                 voidText.style.opacity = 1 - (scrolled / window.innerHeight);
             }
        });
-                
-    </script>
+    const enter = document.getElementById("enterArchive");
+
+if (enter) {
+
+    enter.addEventListener("click", function (e) {
+
+        e.preventDefault();
+
+        document.body.classList.add("entering");
+
+        setTimeout(() => {
+
+            document.getElementById("about").scrollIntoView({
+                behavior: "auto",
+                block: "start"
+            });
+
+        }, 700);
+
+        setTimeout(() => {
+
+            document.body.classList.remove("entering");
+
+        }, 1100);
+
+    });
+
+}            
+ </script>
+  <div id="transition-overlay"></div>          
 </body>
 </html>
