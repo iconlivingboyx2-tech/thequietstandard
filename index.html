@@ -120,8 +120,11 @@ html{
 
     line-height:.92;
     transition:
-    opacity .8s ease,
-    transform .8s ease;
+          opacity .8s ease,
+          transform .8s ease;
+        
+    animation: heroReveal 1.8s ease forwards;
+    opacity: 0;
 }
 
 .hero-the{
@@ -160,6 +163,8 @@ html{
     transition:
    opacity .8s ease,
    transform .8s ease;
+        animation: heroReveal 2.2s ease forwards;
+opacity: 0;
 }
 
 .hero-enter:hover{
@@ -175,7 +180,8 @@ html{
     font-size:.95rem;
 
     opacity:.55;
-
+animation: heroReveal 2.6s ease forwards;
+opacity: 0;
 }
 
 .hero-link{
@@ -195,7 +201,7 @@ html{
 #about{
     background:#000;
     color:#f5f5f0;
-    padding:140px 40px;
+    padding:260px 40px;
 }
 
 .about-intro{
@@ -891,6 +897,20 @@ body.entering #transition-overlay{
     opacity:1;
 
 }
+        @keyframes heroReveal {
+
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+        filter: blur(8px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+
     </style>
 </head>
 <body> 
