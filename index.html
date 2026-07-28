@@ -246,13 +246,13 @@ section{
 
     display:flex;
 
-    align-items:center;
+    align-items:flex-start;
 
     justify-content:center;
 
     text-align:center;
 
-    padding:0 8vw;
+    padding:12vh 8vw 8vh;
 
 }
 
@@ -298,11 +298,21 @@ section{
 
     font-weight:400;
 
-    font-size:clamp(82px,9vw,138px);
+    font-size:clamp(58px,5.2vw,76px);
 
-    line-height:.90;
+    line-height:.94;
 
-    letter-spacing:-.04em;
+    letter-spacing:-.03em;
+
+    max-width:620px;
+
+    margin:90px auto 0;
+
+    opacity:0;
+
+    animation:heroReveal 1.8s ease forwards;
+
+    animation-delay:.2s;
 
 }
 
