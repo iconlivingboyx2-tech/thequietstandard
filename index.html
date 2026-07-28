@@ -1181,6 +1181,7 @@ body.entering .hero-enter{
 </div>
 
 <form
+    id="newsletter-form"
     action="https://formspree.io/f/mjgagnzl"
     method="POST"
     style="margin-top:180px;max-width:640px;">
@@ -1496,7 +1497,53 @@ document.body.classList.remove("entering");
 });
 
 }
+const newsletterForm = document.getElementById("newsletter-form");
 
+if (newsletterForm) {
+
+    newsletterForm.addEventListener("submit", async function(e) {
+
+        e.preventDefault();
+
+        const button = newsletterForm.querySelector("button");
+
+        const originalText = button.textContent;
+
+        button.disabled = true;
+        button.textContent = "Submitting...";
+
+        try {
+
+            const response = await fetch(newsletterForm.action, {
+                method: "POST",
+                body: new FormData(newsletterForm),
+                headers: {
+                    "Accept": "application/json"
+                }
+            });
+
+            if (response.ok) {
+
+                window.location.href = "thanks.html";
+
+            } else {
+
+                throw new Error("Submission failed");
+
+            }
+
+        } catch (err) {
+
+            button.disabled = false;
+            button.textContent = originalText;
+
+            alert("Something went wrong. Please try again.");
+
+        }
+
+    });
+
+}
 </script>
 
 </body>
