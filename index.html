@@ -538,7 +538,7 @@ body.entering .hero-enter{
 
 .footer-top{
     display:grid;
-    grid-template-columns:320px 1fr;
+    grid-template-columns:max-content 1fr;
     gap:120px;
     align-items:start;
     border-top:1px solid #222;
@@ -554,13 +554,13 @@ body.entering .hero-enter{
 }
 
 .footer-brand p{
-    font-size:13px;
-    letter-spacing:.28em;
+    font-size:12px;
+    letter-spacing:.35em;
     text-transform:uppercase;
     color:#666;
-    line-height:2;
+    white-space:nowrap;
+    margin:0;
 }
-
 .footer-nav{
     display:flex;
     flex-direction:column;
@@ -1364,18 +1364,11 @@ body.entering .hero-enter{
     <div class="container">
 
         <div class="footer-top">
-
-            <div class="footer-brand">
-
-                <h2>The Quiet Standard</h2>
-
-                <p>
-                    Silence.<br>
-                    Structure.<br>
-                    Discipline.
-                </p>
-
-            </div>
+           <div class="footer-brand">
+              
+    <p>SILENCE. STRUCTURE. DISCIPLINE.</p>
+              
+    </div>
 
             <nav class="footer-nav">
 
