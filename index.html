@@ -145,49 +145,31 @@ section{
 }
 
 .display{
-
     font-family:"Cormorant Garamond",serif;
-
     font-weight:400;
-
-    font-size:clamp(68px,8vw,104px);
-
-    line-height:.92;
-
-    letter-spacing:-.03em;
-
+    font-size:clamp(42px,5vw,58px);
+    line-height:1.02;
+    letter-spacing:-.015em;
+    max-width:700px;
 }
 
 .sub-display{
-
     font-family:"Cormorant Garamond",serif;
-
     font-weight:400;
-
-    font-size:clamp(28px,3vw,40px);
-
-    line-height:1.25;
-
-    margin-top:50px;
-
-    color:rgba(245,245,240,.92);
-
+    font-size:clamp(20px,2vw,28px);
+    line-height:1.55;
+    margin-top:34px;
+    max-width:620px;
+    color:rgba(245,245,240,.88);
 }
 
 .body-copy{
-
-    margin-top:80px;
-
-    max-width:var(--reading);
-
+    margin-top:70px;
+    max-width:560px;
     font-size:18px;
-
     line-height:2.1;
-
     font-weight:300;
-
     color:var(--body);
-
 }
 
 .divider{
@@ -213,23 +195,32 @@ section{
         padding:180px 9vw;
     }
 
-    .display{
-        font-size:46px;
-        line-height:.95;
-    }
+.display{
 
-    .sub-display{
-        font-size:20px;
-        line-height:1.55;
-        margin-top:30px;
-    }
+    font-size:32px;
 
-    .body-copy{
-        font-size:16px;
-        line-height:2;
-        margin-top:60px;
-    }
+    line-height:1.08;
 
+}
+
+   .sub-display{
+
+    font-size:18px;
+
+    line-height:1.65;
+
+    margin-top:26px;
+
+}
+.body-copy{
+
+    font-size:16px;
+
+    line-height:2;
+
+    margin-top:55px;
+
+}
     #hero{
         padding:10vh 8vw 8vh;
     }
@@ -250,7 +241,13 @@ section{
         gap:42px;
         margin-top:430px;
     }
-   
+   .section-divider{
+    width:100%;
+    max-width:720px;
+    height:1px;
+    background:#222;
+    margin:22px 0 60px;
+}
   }
 
 
@@ -748,19 +745,21 @@ body.entering .hero-enter{
 
     <div class="container">
 
-        <div class="section-label">
-            About
-        </div>
+   <div class="section-label">
+    About
+</div>
 
-        <h2 class="display">
-            Architecture is more
-            than structure.
-        </h2>
+<div class="section-divider"></div>
 
-        <p class="sub-display">
-            It is a discipline of observation,
-            proportion and restraint.
-        </p>
+<h2 class="display">
+    Architecture is more
+    than structure.
+</h2>
+
+<p class="sub-display">
+    It is a discipline of observation,
+    proportion and restraint.
+</p>
 
         <div class="body-copy">
 
@@ -771,8 +770,6 @@ body.entering .hero-enter{
             Through observation, systems and thoughtful design, it studies how lasting structures are formed, not only in the built environment, but in the way we think and live.
 
         </div>
-
-    </div>
 
 </section>
 <!-- =======================================
