@@ -201,55 +201,40 @@ opacity: 0;
 #about{
     background:#000;
     color:#f5f5f0;
-    padding:420px 40px 260px;
+    padding:420px 12vw 260px;
 }
 
-.about-intro{
-    max-width:900px;
-    margin:0 auto 90px;
-    text-align:center;
-}
-
-.about-kicker{
-    font-family:'Cormorant Garamond', serif;
-    font-size:15px;
-    letter-spacing:.35em;
+#about .section-label{
+    font-family:"Helvetica Neue",sans-serif;
+    font-size:12px;
+    letter-spacing:.5em;
     text-transform:uppercase;
-    color:#8f8a83;
-    margin-bottom:22px;
-}
+    color:#666;
+    margin-bottom:110px;
 
-.about-heading{
-    font-family:'Cormorant Garamond', serif;
-    font-size:clamp(2.4rem,4.5vw,4rem);
+#about .about-title{
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(68px,8vw,104px);
+    line-height:.92;
+    letter-spacing:-.03em;
+    max-width:560px;
+    margin:0 0 90px;
+
+#about .about-subtitle{
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(28px,3vw,40px);
+    line-height:1.25;
+    color:rgba(245,245,240,.92);
+    margin:0 0 140px;
+
+#about .about-copy{
+    max-width:460px;
+    font-family:"Helvetica Neue",sans-serif;
+    font-size:18px;
+    line-height:2.1;
     font-weight:300;
-    line-height:1.08;
-    letter-spacing:-0.02em;
-    max-width:900px;
-    margin:0 auto;
+    color:rgba(245,245,240,.68);
 }
-
-.about-body{
-    max-width:720px;
-    margin:0 auto;
-}
-
-.about-body p{
-     font-family:'Cormorant Garamond', serif;
-     font-size:27px;
-     line-height:1.8;
-     color:#d5d0c8;
-     margin:0 0 44px;
-}
-
-.about-body .closing{
-    margin-top:90px;
-    text-align:center;
-    font-size:38px;
-    color:#f5f5f0;
-    line-height:1.4;
-}
-
         /* Navigation - Hidden by default */
               .nav-trigger {
             position: fixed;
@@ -965,59 +950,21 @@ body.entering #transition-overlay{
  <!-- About -->
 <section id="about">
 
-    <p class="section-title">ABOUT</p>
+    <div class="section-label">ABOUT</div>
 
-    <div class="about-intro">
+    <h2 class="about-title">
+        Architecture is more than structure.
+    </h2>
 
-        <p class="about-kicker">
-            An evolving design house.
-        </p>
+    <p class="about-subtitle">
+        It is a discipline of observation, proportion and restraint.
+    </p>
 
-        <h2 class="about-heading">
-            Dedicated to the study of
-            architecture, philosophy
-            and disciplined living.
-        </h2>
+    <p class="about-copy">
+        The Quiet Standard is an archive devoted to the enduring principles that shape both the spaces we inhabit and the lives we build.
+    </p>
 
-    </div>
-
-    <div class="about-body">
-
-     <p>
-The <span class="brand-q">Q</span>uiet Standard studies the principles that allow certain things to endure.
-</p>
-        <p>
-            Not simply buildings, but ideas. Not simply objects, but systems. Not simply moments, but ways of living.
-        </p>
-
-        <p>
-            Architecture teaches that every lasting structure begins with intention rather than decoration.
-        </p>
-
-        <p>
-            Philosophy teaches that clarity is built through observation before opinion.
-        </p>
-
-        <p>
-            Discipline transforms both into daily practice.
-        </p>
-
-        <p>
-            Together they form the foundation of this work.
-        </p>
-
-      <p>
-The <span class="brand-q">Q</span>uiet Standard is an archive assembled slowly through observations, essays, frameworks and long-term projects...
-</p>
-        <p>
-            Everything collected here belongs to the same study:
-        </p>
-
-        <p class="closing">
-            How should something be built if it is meant to endure?
-        </p>
-
-    </div>
+</section>
    
     </section>
 <section id="foundation">
