@@ -270,6 +270,23 @@ section{
         margin-top:430px;
 
     }
+.footer-nav{
+    width:100%;
+    min-width:0;
+    margin-top:90px;
+}
+
+.footer-title{
+    font-size:16px;
+}
+
+.footer-divider{
+    width:44px;
+    margin:0 20px;
+}
+
+.footer-number{
+    font-size:13px;
 
 }
 
@@ -550,6 +567,49 @@ body.entering .hero-enter{
 
 }
 footer a:hover{
+    color:#fff;
+}
+   .footer-nav{
+    display:flex;
+    flex-direction:column;
+    gap:46px;
+    min-width:360px;
+}
+
+.footer-nav a{
+    display:flex;
+    align-items:center;
+    color:#f5f5f0;
+    text-decoration:none;
+}
+
+.footer-title{
+    font-size:18px;
+    font-weight:300;
+}
+
+.footer-divider{
+    width:58px;
+    height:1px;
+    background:#333;
+    margin:0 24px;
+}
+
+.footer-number{
+    font-size:14px;
+    letter-spacing:.18em;
+    color:#777;
+}
+
+.footer-nav a:hover .footer-title{
+    color:#fff;
+}
+
+.footer-nav a:hover .footer-divider{
+    background:#fff;
+}
+
+.footer-nav a:hover .footer-number{
     color:#fff;
 }
 </style>
@@ -1234,13 +1294,11 @@ footer a:hover{
 
         <div style="border-top:1px solid #222;padding-top:90px;">
 
-            <div style="
-                display:flex;
-                justify-content:space-between;
-                align-items:flex-start;
-                flex-wrap:wrap;
-                gap:80px;">
-
+           <div style="
+             display:flex;
+             justify-content:space-between;
+             align-items:flex-start;
+             gap:80px;">
                 <div>
 
                     <div style="
@@ -1265,27 +1323,45 @@ footer a:hover{
 
                 </div>
 
-                <div style="
-                    display:flex;
-                    flex-direction:column;
-                    gap:18px;
-                    text-align:right;">
+               <div class="footer-nav">
 
-                    <a href="#hero">Cover</a>
+    <a href="#hero">
+        <span class="footer-title">Cover</span>
+        <span class="footer-divider"></span>
+        <span class="footer-number">01</span>
+    </a>
 
-                    <a href="#about">About</a>
+    <a href="#about">
+        <span class="footer-title">About</span>
+        <span class="footer-divider"></span>
+        <span class="footer-number">02</span>
+    </a>
 
-                    <a href="#archive">Archive</a>
+    <a href="#archive">
+        <span class="footer-title">Archive</span>
+        <span class="footer-divider"></span>
+        <span class="footer-number">03</span>
+    </a>
 
-                    <a href="#journal">Journal</a>
+    <a href="#journal">
+        <span class="footer-title">Journal</span>
+        <span class="footer-divider"></span>
+        <span class="footer-number">04</span>
+    </a>
 
-                    <a href="#collector-editions">Collector Editions</a>
+    <a href="#collector-editions">
+        <span class="footer-title">Collector Editions</span>
+        <span class="footer-divider"></span>
+        <span class="footer-number">05</span>
+    </a>
 
-                    <a href="#publication">Publication</a>
+    <a href="#publication">
+        <span class="footer-title">Publication</span>
+        <span class="footer-divider"></span>
+        <span class="footer-number">06</span>
+    </a>
 
-                </div>
-
-            </div>
+</div>
 
           <div style="
     margin-top:140px;
