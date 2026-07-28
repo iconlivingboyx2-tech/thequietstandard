@@ -578,6 +578,9 @@ body.entering .hero-enter{
 
     transition:all .6s ease;
 
+/* ==========================================
+   FOOTER
+========================================== */
 
 #footer{
     padding:140px 12vw 80px;
@@ -588,25 +591,24 @@ body.entering .hero-enter{
     grid-template-columns:320px 1fr;
     gap:120px;
     align-items:start;
-
     border-top:1px solid #222;
     padding-top:80px;
 }
 
 .footer-brand h2{
     font-family:"Cormorant Garamond",serif;
-    font-size:44px;
+    font-size:68px;
     font-weight:400;
-    line-height:.95;
-    margin-bottom:28px;
+    line-height:.9;
+    margin-bottom:34px;
 }
 
 .footer-brand p{
-    font-size:12px;
-    letter-spacing:.26em;
+    font-size:13px;
+    letter-spacing:.28em;
     text-transform:uppercase;
     color:#666;
-    line-height:1.9;
+    line-height:2;
 }
 
 .footer-nav{
@@ -619,10 +621,11 @@ body.entering .hero-enter{
     display:flex;
     align-items:center;
     color:#f5f5f0;
+    transition:.3s;
 }
 
 .footer-title{
-    width:220px;
+    width:210px;
     font-size:18px;
     font-weight:300;
 }
@@ -630,12 +633,13 @@ body.entering .hero-enter{
 .footer-divider{
     flex:1;
     height:1px;
-    background:#2b2b2b;
+    background:#2a2a2a;
     margin:0 26px;
+    transition:.3s;
 }
 
 .footer-number{
-    width:36px;
+    width:34px;
     text-align:right;
     color:#666;
     font-size:14px;
@@ -654,71 +658,52 @@ body.entering .hero-enter{
 }
 
 .footer-bottom{
-
     border-top:1px solid #222;
-
     margin-top:120px;
-
-    padding-top:60px;
-
+    padding-top:55px;
     display:flex;
-
     flex-direction:column;
-
     gap:34px;
-
 }
 
 .footer-copy,
 .footer-rights,
 .footer-instagram{
-
-    color:#555;
-
     font-size:12px;
-
-    letter-spacing:.24em;
-
+    letter-spacing:.26em;
     text-transform:uppercase;
-
+    color:#555;
 }
 
 .footer-instagram{
-
     display:inline-block;
-
     width:max-content;
-
-    text-decoration:none;
-
-    color:#777;
-
     padding-bottom:70px;
-
     transition:.3s;
-
 }
 
 .footer-instagram:hover{
-
     color:#fff;
-
 }
 
 @media (max-width:900px){
 
     #footer{
-        padding:90px 9vw 120px;
+        padding:90px 9vw 90px;
     }
 
     .footer-top{
         grid-template-columns:1fr;
-        gap:70px;
+        gap:80px;
         padding-top:70px;
     }
 
     .footer-brand h2{
-        font-size:42px;
+        font-size:54px;
+    }
+
+    .footer-brand p{
+        margin-top:24px;
     }
 
     .footer-nav{
@@ -735,6 +720,7 @@ body.entering .hero-enter{
     }
 
     .footer-number{
+        width:28px;
         font-size:13px;
     }
 
@@ -745,11 +731,9 @@ body.entering .hero-enter{
     }
 
     .footer-instagram{
-        padding-bottom:20px;
+        padding-bottom:10px;
     }
-
 }
-   
 </style>
 
 </head>
