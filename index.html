@@ -328,27 +328,16 @@ section{
     animation-delay:.2s;
 
 }
-
 .hero-enter{
-
     display:inline-flex;
-
     flex-direction:column;
-
     align-items:center;
-
-    gap:24px;
-
-    margin-top:140px;
-
+    gap:36px;
+    margin-top:320px;
     font-size:12px;
-
     letter-spacing:.45em;
-
     text-transform:uppercase;
-
     color:rgba(245,245,240,.72);
-
     transition:color var(--transition),
                transform var(--transition);
 
@@ -363,12 +352,36 @@ section{
 }
 
 .hero-arrow{
-
     font-size:28px;
-
     font-weight:300;
-
+    animation:arrowFloat 2.4s ease-in-out infinite;
 }
+   @keyframes arrowFloat{
+
+    0%{
+
+        transform:translateY(0);
+
+        opacity:.65;
+
+    }
+
+    50%{
+
+        transform:translateY(10px);
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+        opacity:.65;
+
+    }
+
 
 /* ==========================================
    TITLE PAGE
@@ -531,11 +544,6 @@ body.entering .hero-enter{
         <p class="hero-brand">
             The <span class="brand-q">Q</span>uiet Standard
         </p>
-
-        <h1 class="hero-statement">
-            Control the mind.<br>
-            Raise the standard.
-        </h1>
 
         <a href="#title-page"
            id="enterArchive"
